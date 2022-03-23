@@ -1,21 +1,17 @@
 <template>
-  <div>
-    <Header />
+  <div class="d-flex">
     <Sildebar />
-    <Footer />
+    <Container />
   </div>
 </template>
 
 <script>
-import Header from '@/views/layouts/layoutComponents/Header.vue'
 import Sildebar from '@/views/layouts/layoutComponents/Sildebar.vue'
-
-import Footer from '@/views/layouts/layoutComponents/Footer.vue'
+import Container from '@/views/layouts/layoutComponents/Container.vue'
 export default {
   components: {
-    Header,
     Sildebar,
-    Footer
+    Container
   }
 }
 </script>
