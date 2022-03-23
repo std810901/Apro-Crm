@@ -1,16 +1,14 @@
 <template>
   <div>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light">
       <div class="container-fluid p-0">
-        <a class="navbar-brand" href="#">
-          <img
-            src=""
-            alt=""
-            width="30"
-            height="30"
-            class="d-inline-block align-text-top"
-          />
-          {{ $t('__welecome') }}COSMO CRM
+        <a class="navbar-brand" href="#" @click="activeSidebar()">
+          <span
+            class="material-icons-round "
+            :class="{ close: menuSwitcher }"
+          >
+            chevron_left
+          </span>
         </a>
         <button class="btn d-block d-md-none" type="button">
           <span class="material-icons-round">
@@ -79,12 +77,22 @@ import VueCookies from 'vue-cookies'
 import i18n from '@/plugins/i18n'
 import { apiRequest } from '@/axios/axios'
 export default {
-  props: {
-  },
-  mounted () {
-    console.log(i18n.locale)
+  props: {},
+  mounted () {},
+  data () {
+    return {
+      menuSwitcher: false
+    }
   },
   methods: {
+    activeSidebar () {
+      this.menuSwitcher = !this.menuSwitcher
+      if (this.menuSwitcher) {
+        document.getElementById('sidebar').classList.add('active')
+      } else {
+        document.getElementById('sidebar').classList.remove('active')
+      }
+    },
     changeLang (lang) {
       i18n.locale = lang
       localStorage.setItem('language', lang)
@@ -110,5 +118,9 @@ export default {
 .material-icons-round {
   vertical-align: middle;
   font-size: 30px;
+  &.close {
+    transform: rotate(900deg);
+    transition: transform 0.5s;
+  }
 }
 </style>
