@@ -1,4 +1,4 @@
-# aprocrm
+# apro-crm
 
 ## Project setup
 ```
