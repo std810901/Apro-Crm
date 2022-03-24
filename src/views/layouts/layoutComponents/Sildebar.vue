@@ -2,6 +2,7 @@
   <div>
     <nav id="sidebar" class="">
       <div class="menu">
+        <h1>架站後台</h1>
         <a
           href="#"
           class="img logo rounded-circle mb-3"
@@ -50,10 +51,10 @@
             >
             <ul class="list-unstyled collapse" id="templateMenu" style="">
               <li>
-                <a href="#">模組管理</a>
+                <router-link to="/system/modules-mangement">模組管理</router-link>
               </li>
               <li>
-                <a href="#">首頁管理</a>
+                <router-link to="/system/modules-test">首頁管理</router-link>
               </li>
               <li>
                 <a href="#">內頁管理</a>
@@ -91,6 +92,7 @@ export default {
   min-width: 300px;
   max-width: 300px;
   min-height: 100vh;
+  height: 100%;
   background: #090808;
   color: #fff;
   -webkit-transition: all 0.3s;
