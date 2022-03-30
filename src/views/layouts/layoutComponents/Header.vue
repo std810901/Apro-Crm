@@ -1,20 +1,16 @@
 <template>
-  <div>
+  <div class="header" :class="{ close: menuSwitcher }">
     <nav class="navbar navbar-light">
-      <div class="container-fluid p-0">
+      <div class="container-fluid g-0">
         <a class="navbar-brand" href="#" @click="activeSidebar()">
           <span
-            class="material-icons-round "
+            class="material-icons-round me-3"
             :class="{ close: menuSwitcher }"
           >
-            chevron_left
+            rocket_launch
           </span>
+          COSMO
         </a>
-        <button class="btn d-block d-md-none" type="button">
-          <span class="material-icons-round">
-            menu
-          </span>
-        </button>
         <div class="dropstart d-none d-md-flex">
           <a
             href="#"
@@ -89,8 +85,10 @@ export default {
       this.menuSwitcher = !this.menuSwitcher
       if (this.menuSwitcher) {
         document.getElementById('sidebar').classList.add('active')
+        document.getElementById('content').classList.add('active')
       } else {
         document.getElementById('sidebar').classList.remove('active')
+        document.getElementById('content').classList.remove('active')
       }
     },
     changeLang (lang) {
@@ -115,12 +113,27 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.material-icons-round {
-  vertical-align: middle;
-  font-size: 30px;
+.header {
+  position: fixed;
+  top: 0;
+  background-color: #FFF;
+  margin-left: 300px;
+  width: calc(100% - 300px);
+  transition: all 0.3s;
   &.close {
-    transform: rotate(900deg);
-    transition: transform 0.5s;
+    margin-left: unset;
+    width: 100%;
+  }
+}
+.navbar-brand {
+  .material-icons-round {
+    vertical-align: bottom;
+    font-size: 30px;
+    transform: rotate(-135deg);
+    &.close {
+      transform: rotate(405deg);
+      transition: transform 0.5s;
+    }
   }
 }
 </style>
