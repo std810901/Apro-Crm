@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="sidebar">
     <nav id="sidebar" class="">
       <div class="menu">
         <h1>架站後台</h1>
@@ -86,13 +86,13 @@ export default {
 
 <style lang="scss" scoped>
 #sidebar {
+  position: fixed;
+  top: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-width: 300px;
   max-width: 300px;
   min-height: 100vh;
-  height: 100%;
   background: #090808;
   color: #fff;
   -webkit-transition: all 0.3s;
