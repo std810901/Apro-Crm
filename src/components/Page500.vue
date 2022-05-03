@@ -4,10 +4,10 @@
       <div class="row justify-content-center align-item-center">
         <div class="col-12">
           <div class="clearfix">
-            <h1 class="float-left display-3 mr-4">404</h1>
-            <h4 class="pt-3">Oops! You're lost.</h4>
+            <h1 class="float-left display-3 mr-4">500</h1>
+            <h4 class="pt-3">Oops! Server Error.</h4>
             <p class="text-muted">
-              The page you are looking for was not found.
+              Something went wrong with server.
             </p>
           </div>
         </div>

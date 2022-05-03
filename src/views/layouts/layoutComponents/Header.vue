@@ -68,7 +68,7 @@
 </template>
 
 <script>
-import authApi from '@/api/authApi'
+import generalApi from '@/api/generalApi'
 import VueCookies from 'vue-cookies'
 import i18n from '@/plugins/i18n'
 import { apiRequest } from '@/axios/axios'
@@ -95,17 +95,18 @@ export default {
       i18n.locale = lang
       localStorage.setItem('language', lang)
       apiRequest.defaults.headers.common.language = lang
+      location.reload()
     },
     logout () {
-      authApi
+      generalApi
         .logout()
         .then(res => {
-          console.log(res)
+          this.apiHandle(res, false)
           VueCookies.remove('token')
           this.$router.push('/login')
         })
         .catch(err => {
-          console.error(err)
+          this.apiHandle(err)
         })
     }
   }
@@ -116,10 +117,11 @@ export default {
 .header {
   position: fixed;
   top: 0;
-  background-color: #FFF;
+  background-color: #fff;
   margin-left: 300px;
   width: calc(100% - 300px);
   transition: all 0.3s;
+  z-index: 1;
   &.close {
     margin-left: unset;
     width: 100%;
@@ -127,13 +129,15 @@ export default {
 }
 .navbar-brand {
   .material-icons-round {
-    vertical-align: bottom;
-    font-size: 30px;
     transform: rotate(-135deg);
     &.close {
       transform: rotate(405deg);
       transition: transform 0.5s;
     }
   }
+}
+.material-icons-round {
+  font-size: 30px;
+  vertical-align: bottom;
 }
 </style>

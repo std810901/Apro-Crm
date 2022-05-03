@@ -63,13 +63,15 @@
 </template>
 
 <script>
-import authApi from '@/api/authApi'
+import generalApi from '@/api/generalApi'
 import { apiRequest } from '@/axios/axios'
 import VueCookies from 'vue-cookies'
 export default {
   data () {
     return {
-      userName: localStorage.getItem('userName') ? localStorage.getItem('userName') : '',
+      userName: localStorage.getItem('userName')
+        ? localStorage.getItem('userName')
+        : '',
       password: '',
       language: '',
       remberMyAccount: false
@@ -77,7 +79,9 @@ export default {
   },
   mounted () {
     if (localStorage.getItem('userName')) this.remberMyAccount = true
-    if (localStorage.getItem('language')) this.language = localStorage.getItem('language')
+    if (localStorage.getItem('language')) {
+      this.language = localStorage.getItem('language')
+    }
   },
   methods: {
     login () {
@@ -90,15 +94,15 @@ export default {
         username: this.userName,
         password: this.password
       }
-      authApi
+      generalApi
         .login(loginData)
         .then(res => {
-          console.log(res)
+          this.apiHandle(res, false)
           VueCookies.set('token', res.data.access_token, 86400)
           location.replace(location.protocol + '//' + location.host)
         })
         .catch(err => {
-          console.error(err)
+          this.apiHandle(err)
         })
     }
   }

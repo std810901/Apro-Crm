@@ -1,3 +1,14 @@
 {
-  "__welecome": "Welecome"
+  "__welecome": "Welecome",
+  "system": "System Management",
+  "question": "Question Management",
+  "template": "Layout management",
+  "sub_domain": "Sub-domain management",
+  "admin_group": "Permission Management",
+  "admin_user": "User Management",
+  "site_setting": "Main Settings",
+  "option": "Tag option management",
+  "module": "Module Management",
+  "template_index": "Homepage Management",
+  "template_page": "Inner Page Management"
 }

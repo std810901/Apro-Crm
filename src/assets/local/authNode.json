@@ -1,0 +1,77 @@
+{
+  "data": [
+    {
+      "key": 0,
+      "id": 1,
+      "data": "system",
+      "icon": "pi pi-fw pi-cog",
+      "children": [
+        {
+          "key": "0-1",
+          "id": 2,
+          "data": "admin_group",
+          "icon": "pi pi-fw pi-key"
+        },
+        {
+          "key": "0-2",
+          "id": 3,
+          "data": "admin_user",
+          "icon": "pi pi-fw pi-users"
+        },
+        {
+          "key": "0-3",
+          "id": 4,
+          "data": "site_setting",
+          "icon": "pi pi-fw pi-cog"
+        }
+      ]
+    },
+    {
+      "key": 1,
+      "id": 5,
+      "data": "question",
+      "icon": "pi pi-fw pi-question-circle",
+      "children": [
+        {
+          "key": "1-1",
+          "id": 6,
+          "data": "option",
+          "icon": "pi pi-fw pi-tags"
+        }
+      ]
+    },
+    {
+      "key": 2,
+      "id": 7,
+      "data": "template",
+      "icon": "pi pi-fw pi-desktop",
+      "children": [
+        {
+          "key": "2-1",
+          "id": 8,
+          "data": "module",
+          "icon": "pi pi-fw pi-box"
+        },
+        {
+          "key": "2-2",
+          "id": 9,
+          "data": "template_index",
+          "icon": "pi pi-fw pi-home"
+        },
+        {
+          "key": "2-3",
+          "id": 10,
+          "data": "template_page",
+          "icon": "pi pi-fw pi-file"
+        }
+      ]
+    },
+    {
+      "key": 3,
+      "id": 11,
+      "data": "sub_domain",
+      "icon": "pi pi-fw pi-sitemap",
+      "children": []
+    }
+  ]
+}

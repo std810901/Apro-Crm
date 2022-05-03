@@ -19,6 +19,10 @@ const token = VueCookies.get('token')
 if (token) {
   apiRequest.defaults.headers.common.Authorization = 'Bearer ' + token
 }
+const language = localStorage.getItem('language')
+if (language) {
+  apiRequest.defaults.headers.common.language = language
+}
 
 // Add a request interceptor
 apiRequest.interceptors.request.use(

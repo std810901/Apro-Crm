@@ -1,0 +1,18 @@
+{
+  "code": 200,
+  "message": "OK",
+  "data": {
+    "total": 1,
+    "list": [
+      {
+        "id": 1,
+        "title": "你的產業類別?",
+        "option_category": "產業別",
+        "purpose": "匹配",
+        "option": ["工業", "商業", "金融"],
+        "status": 1,
+        "sort": 1
+      }
+    ]
+  }
+}

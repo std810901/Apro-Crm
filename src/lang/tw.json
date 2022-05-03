@@ -1,3 +1,15 @@
 {
-  "__welecome": "歡迎"
+  "__welecome": "歡迎",
+  "system": "系統管理",
+  "question": "問題管理",
+  "template": "版型管理",
+  "sub_domain": "子站管理",
+  "admin_group": "權限管理",
+  "admin_user": "用戶管理",
+  "site_setting": "主要設定",
+  "option": "標籤選項管理",
+  "module": "模組管理",
+  "template_index": "首頁管理",
+  "template_page": "內頁管理"
+
 }

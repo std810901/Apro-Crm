@@ -17,15 +17,17 @@
               </span>
               系統管理</a
             >
-            <ul class="list-unstyled collapse" id="settingsMenu" style="">
+            <ul class="list-unstyled collapse show" id="settingsMenu" style="">
               <li>
-                <a href="#">權限管理</a>
+                <router-link to="/system/auth-management">權限管理</router-link>
               </li>
               <li>
-                <a href="#">用戶管理</a>
+                <router-link to="/system/account-management"
+                  >用戶管理</router-link
+                >
               </li>
               <li>
-                <a href="#">主要設定</a>
+                <router-link to="/system/main-setting">主要設定</router-link>
               </li>
             </ul>
           </li>
@@ -36,9 +38,14 @@
               </span>
               問題管理</a
             >
-            <ul class="list-unstyled collapse" id="questionMenu" style="">
+            <ul class="list-unstyled collapse show" id="questionMenu" style="">
               <li>
-                <a href="#">標籤選項管理</a>
+                <router-link to="/question-management">問題</router-link>
+              </li>
+              <li>
+                <router-link to="/question-management/tag-category-management"
+                  >標籤選項管理</router-link
+                >
               </li>
             </ul>
           </li>
@@ -49,17 +56,73 @@
               </span>
               版型管理</a
             >
-            <ul class="list-unstyled collapse" id="templateMenu" style="">
+            <ul class="list-unstyled collapse show" id="templateMenu" style="">
               <li>
-                <router-link to="/system/modules-mangement">模組管理</router-link>
+                <router-link
+                  to="/template-management/module-category-management"
+                  >模組管理</router-link
+                >
               </li>
               <li>
-                <router-link to="/system/modules-test">首頁管理</router-link>
+                <router-link to="/template-management/frontpage-management"
+                  >首頁管理</router-link
+                >
               </li>
               <li>
-                <a href="#">內頁管理</a>
+                <router-link to="/template-management/innerpage-management"
+                  >內頁管理</router-link
+                >
               </li>
             </ul>
+          </li>
+
+          <li>
+            <a
+              href="#"
+              data-bs-toggle="collapse"
+              data-bs-target="#substationMenu"
+              ><span class="material-icons-round">
+                notifications
+              </span>
+              子站管理</a
+            >
+            <ul
+              class="list-unstyled collapse show"
+              id="substationMenu"
+              style=""
+            >
+              <li>
+                <router-link to="/substation">會員帳號</router-link>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="#"
+              data-bs-toggle="collapse"
+              data-bs-target="#notificationMenu"
+              ><span class="material-icons-round">
+                notifications
+              </span>
+              通知中心管理</a
+            >
+            <ul
+              class="list-unstyled collapse show"
+              id="notificationMenu"
+              style=""
+            >
+              <li>
+                <router-link to="/notification">通知分類</router-link>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <router-link to="/personal">
+              <span class="material-icons-round me-3">
+                person
+              </span>
+              個人設定</router-link
+            >
           </li>
         </ul>
       </div>
@@ -86,6 +149,7 @@ export default {
 
 <style lang="scss" scoped>
 #sidebar {
+  z-index: 1;
   position: fixed;
   top: 0;
   display: flex;
@@ -102,6 +166,13 @@ export default {
     margin-left: -300px;
   }
   ul {
+    max-height: 60vh;
+    overflow-y: auto;
+    -ms-overflow-style: none; /* IE 11 */
+    scrollbar-width: none; /* Firefox 64 */
+    &::-webkit-scrollbar {
+      display: none; /* Chrome、Edage */
+    }
     li {
       a {
         color: white;
